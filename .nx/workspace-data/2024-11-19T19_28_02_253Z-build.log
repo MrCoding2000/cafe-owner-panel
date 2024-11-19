@@ -1,0 +1,53 @@
+
+ NX   Running target build for project user_management:
+
+- user_management
+
+
+
+> nx run user_management:build:development
+
+- Generating browser application bundles (phase: setup)...
+    TypeScript compiler options "target" and "useDefineForClassFields" are set to "ES2022" and "false" respectively by the Angular CLI. To control ECMA version and features use the Browserslist configuration. For more information, see https://angular.dev/tools/cli/build#configuring-browser-compatibility
+    NOTE: You can set the "target" to "ES2022" in the project's tsconfig to remove this warning.
+[ Module Federation Manifest Plugin ]: Manifest will use absolute path resolution via its host at runtime, reason: publicPath='auto'
+√ Browser application bundle generation complete.
+√ Browser application bundle generation complete.
+- Copying assets...
+√ Copying assets complete.
+- Generating index html...
+√ Index html generation complete.
+
+Initial chunk files                                                                                     | Names           |  Raw size
+polyfills.js                                                                                            | polyfills       | 376.18 kB | 
+remoteEntry.mjs                                                                                         | user_management | 263.99 kB | 
+vendor.js                                                                                               | vendor          | 218.75 kB | 
+main.js                                                                                                 | main            |  44.30 kB | 
+styles.css                                                                                              | styles          |   1.70 kB | 
+
+                                                                                                        | Initial total   | 904.92 kB
+
+Lazy chunk files                                                                                        | Names           |  Raw size
+node_modules_angular_core_fesm2022_core_mjs.js                                                          | -               |   1.56 MB | 
+default-node_modules_angular_router_fesm2022_router_mjs.js                                              | -               | 363.03 kB | 
+[32mdefault-node_modules_angular_common_fesm2022_common_mjs.js                                              | -               | 318.93 kB | 
+default-node_modules_angular_common_fesm2022_http_mjs.js                                                | -               | 130.12 kB | 
+default-node_modules_angular_platform-browser_fesm2022_platform-browser_mjs.js                          | -               |  93.26 kB | 
+node_modules_angular_core_fesm2022_primitives_event-dispatch_mjs.js                                     | -               |  75.60 kB | 
+default-node_modules_rxjs_dist_esm_internal_observable_of_js-node_modules_rxjs_dist_esm_inter-3042cc.js | -               |  64.77 kB | 
+default-apps_user_management_src_app_remote-entry_entry_component_ts.js                                 | -               |  44.13 kB | 
+default-node_modules_rxjs_dist_esm_internal_Observable_js-node_modules_rxjs_dist_esm_internal-11fb61.js | -               |  32.17 kB | 
+node_modules_angular_core_fesm2022_primitives_signals_mjs.js                                            | -               |  21.87 kB | 
+apps_user_management_src_bootstrap_ts.js                                                                | bootstrap       |   3.49 kB | 
+common.js                                                                                               | common          | 915 bytes | 
+                                                                                                        | -               |   0 bytes | 
+                                                                                                        | -               |   0 bytes | 
+                                                                                                        | -               |   0 bytes | 
+
+Build at: 2024-11-19T19:28:16.194Z - Hash: 81120f48d5b4794e - Time: 10424ms
+
+
+
+ NX   Successfully ran target build for project user_management
+
+

@@ -1,0 +1,208 @@
+{
+  "id": "user_management",
+  "name": "user_management",
+  "metaData": {
+    "name": "user_management",
+    "type": "app",
+    "buildInfo": {
+      "buildVersion": "0.0.0",
+      "buildName": "@cafe-chi-owner-panel-front/source"
+    },
+    "remoteEntry": {
+      "name": "remoteEntry.mjs",
+      "path": "",
+      "type": "module"
+    },
+    "types": {
+      "path": "",
+      "name": "",
+      "zip": "",
+      "api": ""
+    },
+    "globalName": "user_management",
+    "pluginVersion": "0.6.9",
+    "publicPath": "auto",
+    "prefetchInterface": false
+  },
+  "shared": [
+    {
+      "id": "user_management:@angular/common/http",
+      "name": "@angular/common/http",
+      "version": "18.2.12",
+      "singleton": true,
+      "requiredVersion": "^18.2.12",
+      "assets": {
+        "js": {
+          "async": [
+            "default-node_modules_angular_common_fesm2022_common_mjs.js",
+            "node_modules_angular_core_fesm2022_core_mjs.js",
+            "node_modules_angular_core_fesm2022_primitives_signals_mjs.js",
+            "node_modules_angular_core_fesm2022_primitives_event-dispatch_mjs.js"
+          ],
+          "sync": [
+            "default-node_modules_angular_common_fesm2022_http_mjs.js"
+          ]
+        },
+        "css": {
+          "async": [],
+          "sync": []
+        }
+      }
+    },
+    {
+      "id": "user_management:@angular/common",
+      "name": "@angular/common",
+      "version": "18.2.12",
+      "singleton": true,
+      "requiredVersion": "^18.2.12",
+      "assets": {
+        "js": {
+          "async": [
+            "default-node_modules_rxjs_dist_esm_internal_Observable_js-node_modules_rxjs_dist_esm_internal-11fb61.js",
+            "node_modules_angular_core_fesm2022_core_mjs.js",
+            "node_modules_angular_core_fesm2022_primitives_signals_mjs.js",
+            "node_modules_angular_core_fesm2022_primitives_event-dispatch_mjs.js"
+          ],
+          "sync": [
+            "default-node_modules_angular_common_fesm2022_common_mjs.js"
+          ]
+        },
+        "css": {
+          "async": [],
+          "sync": []
+        }
+      }
+    },
+    {
+      "id": "user_management:@angular/core/primitives/event-dispatch",
+      "name": "@angular/core/primitives/event-dispatch",
+      "version": "18.2.12",
+      "singleton": true,
+      "requiredVersion": "^18.2.12",
+      "assets": {
+        "js": {
+          "async": [],
+          "sync": [
+            "node_modules_angular_core_fesm2022_primitives_event-dispatch_mjs.js"
+          ]
+        },
+        "css": {
+          "async": [],
+          "sync": []
+        }
+      }
+    },
+    {
+      "id": "user_management:@angular/core/primitives/signals",
+      "name": "@angular/core/primitives/signals",
+      "version": "18.2.12",
+      "singleton": true,
+      "requiredVersion": "^18.2.12",
+      "assets": {
+        "js": {
+          "async": [],
+          "sync": [
+            "node_modules_angular_core_fesm2022_primitives_signals_mjs.js"
+          ]
+        },
+        "css": {
+          "async": [],
+          "sync": []
+        }
+      }
+    },
+    {
+      "id": "user_management:@angular/core",
+      "name": "@angular/core",
+      "version": "18.2.12",
+      "singleton": true,
+      "requiredVersion": "^18.2.12",
+      "assets": {
+        "js": {
+          "async": [
+            "node_modules_angular_core_fesm2022_primitives_signals_mjs.js",
+            "node_modules_angular_core_fesm2022_primitives_event-dispatch_mjs.js"
+          ],
+          "sync": [
+            "node_modules_angular_core_fesm2022_core_mjs.js"
+          ]
+        },
+        "css": {
+          "async": [],
+          "sync": []
+        }
+      }
+    },
+    {
+      "id": "user_management:@angular/platform-browser",
+      "name": "@angular/platform-browser",
+      "version": "18.2.12",
+      "singleton": true,
+      "requiredVersion": "^18.2.12",
+      "assets": {
+        "js": {
+          "async": [
+            "default-node_modules_angular_common_fesm2022_common_mjs.js",
+            "default-node_modules_rxjs_dist_esm_internal_Observable_js-node_modules_rxjs_dist_esm_internal-11fb61.js",
+            "node_modules_angular_core_fesm2022_core_mjs.js",
+            "default-node_modules_rxjs_dist_esm_internal_observable_of_js-node_modules_rxjs_dist_esm_inter-3042cc.js",
+            "default-node_modules_angular_common_fesm2022_http_mjs.js",
+            "node_modules_angular_core_fesm2022_primitives_signals_mjs.js",
+            "node_modules_angular_core_fesm2022_primitives_event-dispatch_mjs.js"
+          ],
+          "sync": [
+            "default-node_modules_angular_platform-browser_fesm2022_platform-browser_mjs.js"
+          ]
+        },
+        "css": {
+          "async": [],
+          "sync": []
+        }
+      }
+    },
+    {
+      "id": "user_management:@angular/router",
+      "name": "@angular/router",
+      "version": "18.2.12",
+      "singleton": true,
+      "requiredVersion": "^18.2.12",
+      "assets": {
+        "js": {
+          "async": [
+            "default-node_modules_angular_common_fesm2022_common_mjs.js",
+            "node_modules_angular_core_fesm2022_core_mjs.js",
+            "default-node_modules_angular_platform-browser_fesm2022_platform-browser_mjs.js",
+            "node_modules_angular_core_fesm2022_primitives_signals_mjs.js",
+            "node_modules_angular_core_fesm2022_primitives_event-dispatch_mjs.js",
+            "default-node_modules_angular_common_fesm2022_http_mjs.js"
+          ],
+          "sync": [
+            "default-node_modules_angular_router_fesm2022_router_mjs.js"
+          ]
+        },
+        "css": {
+          "async": [],
+          "sync": []
+        }
+      }
+    }
+  ],
+  "remotes": [],
+  "exposes": [
+    {
+      "id": "user_management:Routes",
+      "name": "Routes",
+      "assets": {
+        "js": {
+          "async": [],
+          "sync": []
+        },
+        "css": {
+          "async": [],
+          "sync": []
+        }
+      },
+      "path": "./Routes"
+    }
+  ]
+}

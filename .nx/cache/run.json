@@ -1,0 +1,21 @@
+{
+  "run": {
+    "command": "nx run-many --target=build --projects=user_management --configuration=development",
+    "startTime": "2024-11-19T19:28:02.550Z",
+    "endTime": "2024-11-19T19:28:16.335Z",
+    "inner": false
+  },
+  "tasks": [
+    {
+      "taskId": "user_management:build:development",
+      "target": "build",
+      "projectName": "user_management",
+      "hash": "9676419314953864797",
+      "startTime": "2024-11-19T19:28:02.562Z",
+      "endTime": "2024-11-19T19:28:16.335Z",
+      "params": "",
+      "cacheStatus": "cache-miss",
+      "status": 0
+    }
+  ]
+}
