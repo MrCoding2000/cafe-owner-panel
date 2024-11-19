@@ -451,3 +451,14 @@
 [NX Daemon Server] - 2024-11-19T19:38:40.289Z - [WATCHER]: Stopping the watcher for C:\Users\ASUS\Desktop\cafe-chi-owner-panel-front (sources)
 [NX Daemon Server] - 2024-11-19T19:38:40.289Z - [WATCHER]: Stopping the watcher for C:\Users\ASUS\Desktop\cafe-chi-owner-panel-front (outputs)
 [NX Daemon Server] - 2024-11-19T19:38:40.290Z - Server stopped because: "Stopping the daemon the set of ignored files changed (native)"
+[NX Daemon Server] - 2024-11-19T20:01:13.144Z - Started listening on: \\.\pipe\nx\C:\Users\ASUS\AppData\Local\Temp\f3208cae85\d.sock
+[NX Daemon Server] - 2024-11-19T20:01:13.149Z - [WATCHER]: Subscribed to changes within: D:\cafe-owner-panel (native)
+[NX Daemon Server] - 2024-11-19T20:01:13.160Z - Established a connection. Number of open connections: 1
+[NX Daemon Server] - 2024-11-19T20:01:13.163Z - Closed a connection. Number of open connections: 0
+[NX Daemon Server] - 2024-11-19T20:01:13.163Z - Established a connection. Number of open connections: 1
+[NX Daemon Server] - 2024-11-19T20:01:13.166Z - [REQUEST]: Responding to the client. Shutdown initiated
+[NX Daemon Server] - 2024-11-19T20:01:13.166Z - Done responding to the client Shutdown initiated
+[NX Daemon Server] - 2024-11-19T20:01:13.166Z - Handled FORCE_SHUTDOWN. Handling time: 1. Response time: 0.
+[NX Daemon Server] - 2024-11-19T20:01:13.167Z - Closed a connection. Number of open connections: 0
+[NX Daemon Server] - 2024-11-19T20:01:13.168Z - [WATCHER]: Stopping the watcher for D:\cafe-owner-panel (sources)
+[NX Daemon Server] - 2024-11-19T20:01:13.168Z - [WATCHER]: Stopping the watcher for D:\cafe-owner-panel (outputs)
