@@ -15,6 +15,14 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@cafe-chi-owner-panel-front/cl-table": [
+        "libs/view/cl-table/src/index.ts"
+      ],
+      "@cafe-chi-owner-panel-front/libs": ["libs/src/index.ts"],
+      "@cafe-chi-owner-panel-front/view": ["libs/view/src/index.ts"],
+      "payments/Routes": ["apps/payments/src/app/remote-entry/entry.routes.ts"],
+      "reports/Routes": ["apps/reports/src/app/remote-entry/entry.routes.ts"],
+      "security/Routes": ["apps/security/src/app/remote-entry/entry.routes.ts"],
       "user_management/Routes": [
         "apps/user_management/src/app/remote-entry/entry.routes.ts"
       ]

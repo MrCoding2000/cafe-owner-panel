@@ -165,6 +165,501 @@
         "implicitDependencies": []
       }
     },
+    "payments": {
+      "name": "payments",
+      "type": "app",
+      "data": {
+        "root": "apps/payments",
+        "name": "payments",
+        "$schema": "../../node_modules/nx/schemas/project-schema.json",
+        "projectType": "application",
+        "prefix": "app",
+        "sourceRoot": "apps/payments/src",
+        "tags": [],
+        "targets": {
+          "build": {
+            "executor": "@nx/angular:webpack-browser",
+            "outputs": [
+              "{options.outputPath}"
+            ],
+            "options": {
+              "outputPath": "dist/apps/payments",
+              "index": "apps/payments/src/index.html",
+              "main": "apps/payments/src/main.ts",
+              "polyfills": [
+                "zone.js"
+              ],
+              "tsConfig": "apps/payments/tsconfig.app.json",
+              "inlineStyleLanguage": "scss",
+              "assets": [
+                {
+                  "glob": "**/*",
+                  "input": "apps/payments/public"
+                }
+              ],
+              "styles": [
+                "apps/payments/src/styles.scss"
+              ],
+              "scripts": [],
+              "customWebpackConfig": {
+                "path": "apps/payments/webpack.config.ts"
+              }
+            },
+            "configurations": {
+              "production": {
+                "budgets": [
+                  {
+                    "type": "initial",
+                    "maximumWarning": "500kb",
+                    "maximumError": "1mb"
+                  },
+                  {
+                    "type": "anyComponentStyle",
+                    "maximumWarning": "2kb",
+                    "maximumError": "4kb"
+                  }
+                ],
+                "outputHashing": "all",
+                "customWebpackConfig": {
+                  "path": "apps/payments/webpack.prod.config.ts"
+                }
+              },
+              "development": {
+                "buildOptimizer": false,
+                "optimization": false,
+                "vendorChunk": true,
+                "extractLicenses": false,
+                "sourceMap": true,
+                "namedChunks": true
+              }
+            },
+            "defaultConfiguration": "production",
+            "parallelism": true,
+            "cache": true,
+            "dependsOn": [
+              "^build"
+            ],
+            "inputs": [
+              "production",
+              "^production",
+              {
+                "env": "NX_MF_DEV_REMOTES"
+              }
+            ]
+          },
+          "serve": {
+            "executor": "@nx/angular:dev-server",
+            "options": {
+              "port": 4203,
+              "publicHost": "http://localhost:4203"
+            },
+            "configurations": {
+              "production": {
+                "buildTarget": "payments:build:production"
+              },
+              "development": {
+                "buildTarget": "payments:build:development"
+              }
+            },
+            "defaultConfiguration": "development",
+            "parallelism": true
+          },
+          "extract-i18n": {
+            "executor": "@angular-devkit/build-angular:extract-i18n",
+            "options": {
+              "buildTarget": "payments:build"
+            },
+            "configurations": {},
+            "parallelism": true
+          },
+          "lint": {
+            "executor": "@nx/eslint:lint",
+            "configurations": {},
+            "options": {},
+            "parallelism": true,
+            "cache": true,
+            "inputs": [
+              "default",
+              "{workspaceRoot}/.eslintrc.json",
+              "{workspaceRoot}/.eslintignore",
+              "{workspaceRoot}/eslint.config.js"
+            ]
+          },
+          "test": {
+            "executor": "@nx/jest:jest",
+            "outputs": [
+              "{workspaceRoot}/coverage/{projectRoot}"
+            ],
+            "options": {
+              "jestConfig": "apps/payments/jest.config.ts",
+              "passWithNoTests": true
+            },
+            "configurations": {
+              "ci": {
+                "ci": true,
+                "codeCoverage": true
+              }
+            },
+            "parallelism": true,
+            "cache": true,
+            "inputs": [
+              "default",
+              "^production",
+              "{workspaceRoot}/jest.preset.js"
+            ]
+          },
+          "serve-static": {
+            "executor": "@nx/web:file-server",
+            "defaultConfiguration": "production",
+            "options": {
+              "buildTarget": "payments:build",
+              "port": 4203,
+              "watch": false
+            },
+            "configurations": {
+              "development": {
+                "buildTarget": "payments:build:development"
+              },
+              "production": {
+                "buildTarget": "payments:build:production"
+              }
+            },
+            "parallelism": true
+          }
+        },
+        "implicitDependencies": []
+      }
+    },
+    "security": {
+      "name": "security",
+      "type": "app",
+      "data": {
+        "root": "apps/security",
+        "name": "security",
+        "$schema": "../../node_modules/nx/schemas/project-schema.json",
+        "projectType": "application",
+        "prefix": "app",
+        "sourceRoot": "apps/security/src",
+        "tags": [],
+        "targets": {
+          "build": {
+            "executor": "@nx/angular:webpack-browser",
+            "outputs": [
+              "{options.outputPath}"
+            ],
+            "options": {
+              "outputPath": "dist/apps/security",
+              "index": "apps/security/src/index.html",
+              "main": "apps/security/src/main.ts",
+              "polyfills": [
+                "zone.js"
+              ],
+              "tsConfig": "apps/security/tsconfig.app.json",
+              "inlineStyleLanguage": "scss",
+              "assets": [
+                {
+                  "glob": "**/*",
+                  "input": "apps/security/public"
+                }
+              ],
+              "styles": [
+                "apps/security/src/styles.scss"
+              ],
+              "scripts": [],
+              "customWebpackConfig": {
+                "path": "apps/security/webpack.config.ts"
+              }
+            },
+            "configurations": {
+              "production": {
+                "budgets": [
+                  {
+                    "type": "initial",
+                    "maximumWarning": "500kb",
+                    "maximumError": "1mb"
+                  },
+                  {
+                    "type": "anyComponentStyle",
+                    "maximumWarning": "2kb",
+                    "maximumError": "4kb"
+                  }
+                ],
+                "outputHashing": "all",
+                "customWebpackConfig": {
+                  "path": "apps/security/webpack.prod.config.ts"
+                }
+              },
+              "development": {
+                "buildOptimizer": false,
+                "optimization": false,
+                "vendorChunk": true,
+                "extractLicenses": false,
+                "sourceMap": true,
+                "namedChunks": true
+              }
+            },
+            "defaultConfiguration": "production",
+            "parallelism": true,
+            "cache": true,
+            "dependsOn": [
+              "^build"
+            ],
+            "inputs": [
+              "production",
+              "^production",
+              {
+                "env": "NX_MF_DEV_REMOTES"
+              }
+            ]
+          },
+          "serve": {
+            "executor": "@nx/angular:dev-server",
+            "options": {
+              "port": 4204,
+              "publicHost": "http://localhost:4204"
+            },
+            "configurations": {
+              "production": {
+                "buildTarget": "security:build:production"
+              },
+              "development": {
+                "buildTarget": "security:build:development"
+              }
+            },
+            "defaultConfiguration": "development",
+            "parallelism": true
+          },
+          "extract-i18n": {
+            "executor": "@angular-devkit/build-angular:extract-i18n",
+            "options": {
+              "buildTarget": "security:build"
+            },
+            "configurations": {},
+            "parallelism": true
+          },
+          "lint": {
+            "executor": "@nx/eslint:lint",
+            "configurations": {},
+            "options": {},
+            "parallelism": true,
+            "cache": true,
+            "inputs": [
+              "default",
+              "{workspaceRoot}/.eslintrc.json",
+              "{workspaceRoot}/.eslintignore",
+              "{workspaceRoot}/eslint.config.js"
+            ]
+          },
+          "test": {
+            "executor": "@nx/jest:jest",
+            "outputs": [
+              "{workspaceRoot}/coverage/{projectRoot}"
+            ],
+            "options": {
+              "jestConfig": "apps/security/jest.config.ts",
+              "passWithNoTests": true
+            },
+            "configurations": {
+              "ci": {
+                "ci": true,
+                "codeCoverage": true
+              }
+            },
+            "parallelism": true,
+            "cache": true,
+            "inputs": [
+              "default",
+              "^production",
+              "{workspaceRoot}/jest.preset.js"
+            ]
+          },
+          "serve-static": {
+            "executor": "@nx/web:file-server",
+            "defaultConfiguration": "production",
+            "options": {
+              "buildTarget": "security:build",
+              "port": 4204,
+              "watch": false
+            },
+            "configurations": {
+              "development": {
+                "buildTarget": "security:build:development"
+              },
+              "production": {
+                "buildTarget": "security:build:production"
+              }
+            },
+            "parallelism": true
+          }
+        },
+        "implicitDependencies": []
+      }
+    },
+    "reports": {
+      "name": "reports",
+      "type": "app",
+      "data": {
+        "root": "apps/reports",
+        "name": "reports",
+        "$schema": "../../node_modules/nx/schemas/project-schema.json",
+        "projectType": "application",
+        "prefix": "app",
+        "sourceRoot": "apps/reports/src",
+        "tags": [],
+        "targets": {
+          "build": {
+            "executor": "@nx/angular:webpack-browser",
+            "outputs": [
+              "{options.outputPath}"
+            ],
+            "options": {
+              "outputPath": "dist/apps/reports",
+              "index": "apps/reports/src/index.html",
+              "main": "apps/reports/src/main.ts",
+              "polyfills": [
+                "zone.js"
+              ],
+              "tsConfig": "apps/reports/tsconfig.app.json",
+              "inlineStyleLanguage": "scss",
+              "assets": [
+                {
+                  "glob": "**/*",
+                  "input": "apps/reports/public"
+                }
+              ],
+              "styles": [
+                "apps/reports/src/styles.scss"
+              ],
+              "scripts": [],
+              "customWebpackConfig": {
+                "path": "apps/reports/webpack.config.ts"
+              }
+            },
+            "configurations": {
+              "production": {
+                "budgets": [
+                  {
+                    "type": "initial",
+                    "maximumWarning": "500kb",
+                    "maximumError": "1mb"
+                  },
+                  {
+                    "type": "anyComponentStyle",
+                    "maximumWarning": "2kb",
+                    "maximumError": "4kb"
+                  }
+                ],
+                "outputHashing": "all",
+                "customWebpackConfig": {
+                  "path": "apps/reports/webpack.prod.config.ts"
+                }
+              },
+              "development": {
+                "buildOptimizer": false,
+                "optimization": false,
+                "vendorChunk": true,
+                "extractLicenses": false,
+                "sourceMap": true,
+                "namedChunks": true
+              }
+            },
+            "defaultConfiguration": "production",
+            "parallelism": true,
+            "cache": true,
+            "dependsOn": [
+              "^build"
+            ],
+            "inputs": [
+              "production",
+              "^production",
+              {
+                "env": "NX_MF_DEV_REMOTES"
+              }
+            ]
+          },
+          "serve": {
+            "executor": "@nx/angular:dev-server",
+            "options": {
+              "port": 4202,
+              "publicHost": "http://localhost:4202"
+            },
+            "configurations": {
+              "production": {
+                "buildTarget": "reports:build:production"
+              },
+              "development": {
+                "buildTarget": "reports:build:development"
+              }
+            },
+            "defaultConfiguration": "development",
+            "parallelism": true
+          },
+          "extract-i18n": {
+            "executor": "@angular-devkit/build-angular:extract-i18n",
+            "options": {
+              "buildTarget": "reports:build"
+            },
+            "configurations": {},
+            "parallelism": true
+          },
+          "lint": {
+            "executor": "@nx/eslint:lint",
+            "configurations": {},
+            "options": {},
+            "parallelism": true,
+            "cache": true,
+            "inputs": [
+              "default",
+              "{workspaceRoot}/.eslintrc.json",
+              "{workspaceRoot}/.eslintignore",
+              "{workspaceRoot}/eslint.config.js"
+            ]
+          },
+          "test": {
+            "executor": "@nx/jest:jest",
+            "outputs": [
+              "{workspaceRoot}/coverage/{projectRoot}"
+            ],
+            "options": {
+              "jestConfig": "apps/reports/jest.config.ts",
+              "passWithNoTests": true
+            },
+            "configurations": {
+              "ci": {
+                "ci": true,
+                "codeCoverage": true
+              }
+            },
+            "parallelism": true,
+            "cache": true,
+            "inputs": [
+              "default",
+              "^production",
+              "{workspaceRoot}/jest.preset.js"
+            ]
+          },
+          "serve-static": {
+            "executor": "@nx/web:file-server",
+            "defaultConfiguration": "production",
+            "options": {
+              "buildTarget": "reports:build",
+              "port": 4202,
+              "watch": false
+            },
+            "configurations": {
+              "development": {
+                "buildTarget": "reports:build:development"
+              },
+              "production": {
+                "buildTarget": "reports:build:production"
+              }
+            },
+            "parallelism": true
+          }
+        },
+        "implicitDependencies": []
+      }
+    },
     "shell": {
       "name": "shell",
       "type": "app",
@@ -317,6 +812,58 @@
             },
             "configurations": {},
             "parallelism": true
+          }
+        },
+        "implicitDependencies": []
+      }
+    },
+    "view": {
+      "name": "view",
+      "type": "lib",
+      "data": {
+        "root": "libs/view",
+        "name": "view",
+        "$schema": "../../node_modules/nx/schemas/project-schema.json",
+        "sourceRoot": "libs/view/src",
+        "prefix": "lib",
+        "projectType": "library",
+        "tags": [],
+        "targets": {
+          "test": {
+            "executor": "@nx/jest:jest",
+            "outputs": [
+              "{workspaceRoot}/coverage/{projectRoot}"
+            ],
+            "options": {
+              "jestConfig": "libs/view/jest.config.ts",
+              "passWithNoTests": true
+            },
+            "configurations": {
+              "ci": {
+                "ci": true,
+                "codeCoverage": true
+              }
+            },
+            "parallelism": true,
+            "cache": true,
+            "inputs": [
+              "default",
+              "^production",
+              "{workspaceRoot}/jest.preset.js"
+            ]
+          },
+          "lint": {
+            "executor": "@nx/eslint:lint",
+            "configurations": {},
+            "options": {},
+            "parallelism": true,
+            "cache": true,
+            "inputs": [
+              "default",
+              "{workspaceRoot}/.eslintrc.json",
+              "{workspaceRoot}/.eslintignore",
+              "{workspaceRoot}/eslint.config.js"
+            ]
           }
         },
         "implicitDependencies": []
@@ -630,18 +1177,18 @@
         "hash": "sha512-itvL5h8RETACmOTFc4UfIyB2RfEHi71Ax6E/PivVxq9NseKbOWpeyHEOIbmAw1rs8Ak0VursQNww7lf7YtUwzg=="
       }
     },
-    "npm:cosmiconfig": {
+    "npm:cosmiconfig@6.0.0": {
       "type": "npm",
-      "name": "npm:cosmiconfig",
+      "name": "npm:cosmiconfig@6.0.0",
       "data": {
         "version": "6.0.0",
         "packageName": "cosmiconfig",
         "hash": "sha512-xb3ZL6+L8b9JLLCx3ZdoZy4+2ECphCMo2PwqgP1tlfVq6M6YReyzBJtvWWtbDSpNr9hn96pkCiZqUcFEc+54Qg=="
       }
     },
-    "npm:cosmiconfig@7.1.0": {
+    "npm:cosmiconfig": {
       "type": "npm",
-      "name": "npm:cosmiconfig@7.1.0",
+      "name": "npm:cosmiconfig",
       "data": {
         "version": "7.1.0",
         "packageName": "cosmiconfig",
@@ -891,24 +1438,6 @@
         "hash": "sha512-NM8/P9n3XjXhIZn1lLhkFaACTOURQXjWhV4BA/RnOv8xvgqtqpAX9IO4mRQxSx1Rlo4tqzeqb0sOlruaOy3dug=="
       }
     },
-    "npm:less@4.2.0": {
-      "type": "npm",
-      "name": "npm:less@4.2.0",
-      "data": {
-        "version": "4.2.0",
-        "packageName": "less",
-        "hash": "sha512-P3b3HJDBtSzsXUl0im2L7gTO5Ubg8mEN6G8qoTS77iXxXX4Hvu4Qj540PZDvQ8V6DmX6iXo98k7Md0Cm1PrLaA=="
-      }
-    },
-    "npm:less": {
-      "type": "npm",
-      "name": "npm:less",
-      "data": {
-        "version": "4.1.3",
-        "packageName": "less",
-        "hash": "sha512-w16Xk/Ta9Hhyei0Gpz9m7VS8F28nieJaL/VyShID7cYvP6IL5oHeL6p4TXSDJqZE/lNv0oJ2pGVjJsRkfwm5FA=="
-      }
-    },
     "npm:less-loader@12.2.0": {
       "type": "npm",
       "name": "npm:less-loader@12.2.0",
@@ -988,33 +1517,6 @@
         "version": "0.30.13",
         "packageName": "magic-string",
         "hash": "sha512-8rYBO+MsWkgjDSOvLomYnzhdwEG51olQ4zL5KXnNJWV5MNmrb4rTZdrtkhxjnD/QyZUqR/Z/XDsUs/4ej2nx0g=="
-      }
-    },
-    "npm:make-dir@2.1.0": {
-      "type": "npm",
-      "name": "npm:make-dir@2.1.0",
-      "data": {
-        "version": "2.1.0",
-        "packageName": "make-dir",
-        "hash": "sha512-LS9X+dc8KLxXCb8dni79fLIIUA5VyZoyjSMCwTluaXA0o27cCK0bhXkpgw+sTXVpPy/lSO57ilRixqk0vDmtRA=="
-      }
-    },
-    "npm:make-dir@4.0.0": {
-      "type": "npm",
-      "name": "npm:make-dir@4.0.0",
-      "data": {
-        "version": "4.0.0",
-        "packageName": "make-dir",
-        "hash": "sha512-hXdUTZYIVOt1Ex//jAQi+wTZZpUpwBj/0QsOzqegb3rGMMeJiSEu5xLHnYfBrRV4RH2+OCSOO95Is/7x1WJ4bw=="
-      }
-    },
-    "npm:make-dir": {
-      "type": "npm",
-      "name": "npm:make-dir",
-      "data": {
-        "version": "3.1.0",
-        "packageName": "make-dir",
-        "hash": "sha512-g3FeP20LNwhALb/6Cz6Dd4F2ngze0jz7tbzrD2wAV+o9FeNHe4rL+yK2md0J/fiSf1sa1ADhXqi5+oVwOM/eGw=="
       }
     },
     "npm:mini-css-extract-plugin@2.9.0": {
@@ -1159,24 +1661,6 @@
         "version": "4.0.0",
         "packageName": "path-type",
         "hash": "sha512-gDKb8aZMDeD/tZWs9P6+q0J9Mwkdl6xMV8TjnGP3qJVJ06bdMgkbBlLU8IdfOsIsFz2BW1rNVT3XuNEl8zPAvw=="
-      }
-    },
-    "npm:pify@4.0.1": {
-      "type": "npm",
-      "name": "npm:pify@4.0.1",
-      "data": {
-        "version": "4.0.1",
-        "packageName": "pify",
-        "hash": "sha512-uB80kBFb/tfd68bVleG9T5GGsGPjJrLAUpR5PZIrhBnIaRTQRjqdJSsIKkOP6OAIFbj7GOrcudc5pNjZ+geV2g=="
-      }
-    },
-    "npm:pify": {
-      "type": "npm",
-      "name": "npm:pify",
-      "data": {
-        "version": "2.3.0",
-        "packageName": "pify",
-        "hash": "sha512-udgsAY+fTnvv7kI7aaxbqwWNb0AHiB0qBO89PZKPkoTmGOgdbrHDKD+0B2X4uTfJ/FT1R09r9gTsjUjNJotuog=="
       }
     },
     "npm:piscina@4.6.1": {
@@ -4788,6 +5272,24 @@
         "hash": "sha512-+ULLy0vuAUyRicQqjMsG3JmgEylZdciJJOuOanwrmmG/+jv64nUJYycZbwPmGsioViHk/0WB1d5SWWfH7cZ+Ww=="
       }
     },
+    "npm:babel-plugin-macros@2.8.0": {
+      "type": "npm",
+      "name": "npm:babel-plugin-macros@2.8.0",
+      "data": {
+        "version": "2.8.0",
+        "packageName": "babel-plugin-macros",
+        "hash": "sha512-SEP5kJpfGYqYKpBrj5XU3ahw5p5GOHJ0U5ssOSQ/WBVdwkD2Dzlce95exQTs3jOVWPPKLBN2rlEWkCK7dSmLvg=="
+      }
+    },
+    "npm:babel-plugin-macros": {
+      "type": "npm",
+      "name": "npm:babel-plugin-macros",
+      "data": {
+        "version": "3.1.0",
+        "packageName": "babel-plugin-macros",
+        "hash": "sha512-Cg7TFGpIr01vOQNODXOOaGz2NpCU5gl8x1qJFbb6hbZxR7XrcE2vtbAsTAbJ7/xwJtUuJEw8K8Zr/AE0LHlesg=="
+      }
+    },
     "npm:jsonc-parser@3.2.0": {
       "type": "npm",
       "name": "npm:jsonc-parser@3.2.0",
@@ -4912,6 +5414,69 @@
         "version": "20.1.2",
         "packageName": "@nx/webpack",
         "hash": "sha512-H67DkdpaGnUwYbz4u31+2/TSRmkvBQHX742FNKJAc1/D0uzHH6GI3am0h0QF9wrJyc/fXGVNfRZLEh9ScU70Jw=="
+      }
+    },
+    "npm:less@4.1.3": {
+      "type": "npm",
+      "name": "npm:less@4.1.3",
+      "data": {
+        "version": "4.1.3",
+        "packageName": "less",
+        "hash": "sha512-w16Xk/Ta9Hhyei0Gpz9m7VS8F28nieJaL/VyShID7cYvP6IL5oHeL6p4TXSDJqZE/lNv0oJ2pGVjJsRkfwm5FA=="
+      }
+    },
+    "npm:less": {
+      "type": "npm",
+      "name": "npm:less",
+      "data": {
+        "version": "4.2.0",
+        "packageName": "less",
+        "hash": "sha512-P3b3HJDBtSzsXUl0im2L7gTO5Ubg8mEN6G8qoTS77iXxXX4Hvu4Qj540PZDvQ8V6DmX6iXo98k7Md0Cm1PrLaA=="
+      }
+    },
+    "npm:make-dir@2.1.0": {
+      "type": "npm",
+      "name": "npm:make-dir@2.1.0",
+      "data": {
+        "version": "2.1.0",
+        "packageName": "make-dir",
+        "hash": "sha512-LS9X+dc8KLxXCb8dni79fLIIUA5VyZoyjSMCwTluaXA0o27cCK0bhXkpgw+sTXVpPy/lSO57ilRixqk0vDmtRA=="
+      }
+    },
+    "npm:make-dir@4.0.0": {
+      "type": "npm",
+      "name": "npm:make-dir@4.0.0",
+      "data": {
+        "version": "4.0.0",
+        "packageName": "make-dir",
+        "hash": "sha512-hXdUTZYIVOt1Ex//jAQi+wTZZpUpwBj/0QsOzqegb3rGMMeJiSEu5xLHnYfBrRV4RH2+OCSOO95Is/7x1WJ4bw=="
+      }
+    },
+    "npm:make-dir": {
+      "type": "npm",
+      "name": "npm:make-dir",
+      "data": {
+        "version": "3.1.0",
+        "packageName": "make-dir",
+        "hash": "sha512-g3FeP20LNwhALb/6Cz6Dd4F2ngze0jz7tbzrD2wAV+o9FeNHe4rL+yK2md0J/fiSf1sa1ADhXqi5+oVwOM/eGw=="
+      }
+    },
+    "npm:pify@4.0.1": {
+      "type": "npm",
+      "name": "npm:pify@4.0.1",
+      "data": {
+        "version": "4.0.1",
+        "packageName": "pify",
+        "hash": "sha512-uB80kBFb/tfd68bVleG9T5GGsGPjJrLAUpR5PZIrhBnIaRTQRjqdJSsIKkOP6OAIFbj7GOrcudc5pNjZ+geV2g=="
+      }
+    },
+    "npm:pify": {
+      "type": "npm",
+      "name": "npm:pify",
+      "data": {
+        "version": "2.3.0",
+        "packageName": "pify",
+        "hash": "sha512-udgsAY+fTnvv7kI7aaxbqwWNb0AHiB0qBO89PZKPkoTmGOgdbrHDKD+0B2X4uTfJ/FT1R09r9gTsjUjNJotuog=="
       }
     },
     "npm:@nx/workspace": {
@@ -6604,15 +7169,6 @@
         "version": "29.6.3",
         "packageName": "babel-plugin-jest-hoist",
         "hash": "sha512-ESAc/RJvGTFEzRwOTT4+lNDk/GNHMkKbNzsvT0qKRfDyyYTskxB5rnU2njIDYVxXCBHHEI1c0YwHob3WaYujOg=="
-      }
-    },
-    "npm:babel-plugin-macros": {
-      "type": "npm",
-      "name": "npm:babel-plugin-macros",
-      "data": {
-        "version": "2.8.0",
-        "packageName": "babel-plugin-macros",
-        "hash": "sha512-SEP5kJpfGYqYKpBrj5XU3ahw5p5GOHJ0U5ssOSQ/WBVdwkD2Dzlce95exQTs3jOVWPPKLBN2rlEWkCK7dSmLvg=="
       }
     },
     "npm:babel-plugin-polyfill-corejs2": {
@@ -10278,6 +10834,15 @@
         "hash": "sha512-BFRuQUqc7x2NWxfJBCyUrN8iYUYznzL9JROmRz1gZ6KlOIgmoD+njPVbb+VNn2nGMKggMsK79iUNErillsrx7w=="
       }
     },
+    "npm:loose-envify": {
+      "type": "npm",
+      "name": "npm:loose-envify",
+      "data": {
+        "version": "1.4.0",
+        "packageName": "loose-envify",
+        "hash": "sha512-lyuxPGr/Wfhrlem2CL/UcnUc1zcqKAImBDzukY7Y5F/yQiNdko6+fRLevlw1HgMySw7f611UIY408EtxRSoK3Q=="
+      }
+    },
     "npm:luxon": {
       "type": "npm",
       "name": "npm:luxon",
@@ -11655,6 +12220,24 @@
         "hash": "sha512-8zGqypfENjCIqGhgXToC8aB2r7YrBX+AQAfIPs/Mlk+BtPTztOvTS01NRW/3Eh60J+a48lt8qsCzirQ6loCVfA=="
       }
     },
+    "npm:react": {
+      "type": "npm",
+      "name": "npm:react",
+      "data": {
+        "version": "18.3.1",
+        "packageName": "react",
+        "hash": "sha512-wS+hAgJShR0KhEvPJArfuPVN1+Hz1t0Y6n5jLrGQbkb4urgPE/0Rve+1kMB1v/oWgHgm4WIcV+i7F2pTVj+2iQ=="
+      }
+    },
+    "npm:react-dom": {
+      "type": "npm",
+      "name": "npm:react-dom",
+      "data": {
+        "version": "18.3.1",
+        "packageName": "react-dom",
+        "hash": "sha512-5m4nQKp+rZRb09LNH59GM4BxTh9251/ylbKIbpe7TpGxfJ+9kv6BLkLBXIjjspbgbnIBNqlI23tRnTWT0snUIw=="
+      }
+    },
     "npm:react-is": {
       "type": "npm",
       "name": "npm:react-is",
@@ -11905,6 +12488,15 @@
         "version": "6.0.0",
         "packageName": "saxes",
         "hash": "sha512-xAg7SOnEhrm5zI3puOOKyy1OMcMlIJZYNJY7xLBwSze0UjhPLnWfj2GF2EpT0jmzaJKIWKHLsaSSajf35bcYnA=="
+      }
+    },
+    "npm:scheduler": {
+      "type": "npm",
+      "name": "npm:scheduler",
+      "data": {
+        "version": "0.23.2",
+        "packageName": "scheduler",
+        "hash": "sha512-UOShsPwz7NrMUqhR6t0hWjFduvOzbtv7toDH1/hIrfRNIDBnnBWd0CwJTGvTpngVlmwGCdP9/Zl/tVrDqcuYzQ=="
       }
     },
     "npm:secure-compare": {
@@ -13148,6 +13740,132 @@
         "type": "static"
       }
     ],
+    "payments": [
+      {
+        "source": "payments",
+        "target": "npm:@nx/eslint-plugin",
+        "type": "static"
+      },
+      {
+        "source": "payments",
+        "target": "npm:@nx/webpack",
+        "type": "static"
+      },
+      {
+        "source": "payments",
+        "target": "npm:@angular/core",
+        "type": "static"
+      },
+      {
+        "source": "payments",
+        "target": "npm:@angular/router",
+        "type": "static"
+      },
+      {
+        "source": "payments",
+        "target": "npm:@angular/common",
+        "type": "static"
+      },
+      {
+        "source": "payments",
+        "target": "npm:@angular/platform-browser",
+        "type": "static"
+      },
+      {
+        "source": "payments",
+        "target": "npm:jest-preset-angular",
+        "type": "static"
+      },
+      {
+        "source": "payments",
+        "target": "npm:@nx/angular",
+        "type": "static"
+      }
+    ],
+    "security": [
+      {
+        "source": "security",
+        "target": "npm:@nx/eslint-plugin",
+        "type": "static"
+      },
+      {
+        "source": "security",
+        "target": "npm:@nx/webpack",
+        "type": "static"
+      },
+      {
+        "source": "security",
+        "target": "npm:@angular/core",
+        "type": "static"
+      },
+      {
+        "source": "security",
+        "target": "npm:@angular/router",
+        "type": "static"
+      },
+      {
+        "source": "security",
+        "target": "npm:@angular/common",
+        "type": "static"
+      },
+      {
+        "source": "security",
+        "target": "npm:@angular/platform-browser",
+        "type": "static"
+      },
+      {
+        "source": "security",
+        "target": "npm:jest-preset-angular",
+        "type": "static"
+      },
+      {
+        "source": "security",
+        "target": "npm:@nx/angular",
+        "type": "static"
+      }
+    ],
+    "reports": [
+      {
+        "source": "reports",
+        "target": "npm:@nx/eslint-plugin",
+        "type": "static"
+      },
+      {
+        "source": "reports",
+        "target": "npm:@nx/webpack",
+        "type": "static"
+      },
+      {
+        "source": "reports",
+        "target": "npm:@angular/core",
+        "type": "static"
+      },
+      {
+        "source": "reports",
+        "target": "npm:@angular/router",
+        "type": "static"
+      },
+      {
+        "source": "reports",
+        "target": "npm:@angular/common",
+        "type": "static"
+      },
+      {
+        "source": "reports",
+        "target": "npm:@angular/platform-browser",
+        "type": "static"
+      },
+      {
+        "source": "reports",
+        "target": "npm:jest-preset-angular",
+        "type": "static"
+      },
+      {
+        "source": "reports",
+        "target": "npm:@nx/angular",
+        "type": "static"
+      }
+    ],
     "shell": [
       {
         "source": "shell",
@@ -13168,6 +13886,21 @@
         "source": "shell",
         "target": "npm:@angular/router",
         "type": "static"
+      },
+      {
+        "source": "shell",
+        "target": "security",
+        "type": "dynamic"
+      },
+      {
+        "source": "shell",
+        "target": "payments",
+        "type": "dynamic"
+      },
+      {
+        "source": "shell",
+        "target": "reports",
+        "type": "dynamic"
       },
       {
         "source": "shell",
@@ -13192,6 +13925,13 @@
       {
         "source": "shell",
         "target": "npm:@nx/angular",
+        "type": "static"
+      }
+    ],
+    "view": [
+      {
+        "source": "view",
+        "target": "npm:@nx/eslint-plugin",
         "type": "static"
       }
     ],
@@ -13397,7 +14137,7 @@
       },
       {
         "source": "npm:@angular-devkit/build-angular",
-        "target": "npm:less@4.2.0",
+        "target": "npm:less",
         "type": "static"
       },
       {
@@ -14448,62 +15188,10 @@
         "type": "static"
       }
     ],
-    "npm:less@4.2.0": [
-      {
-        "source": "npm:less@4.2.0",
-        "target": "npm:copy-anything",
-        "type": "static"
-      },
-      {
-        "source": "npm:less@4.2.0",
-        "target": "npm:parse-node-version",
-        "type": "static"
-      },
-      {
-        "source": "npm:less@4.2.0",
-        "target": "npm:tslib@2.6.3",
-        "type": "static"
-      },
-      {
-        "source": "npm:less@4.2.0",
-        "target": "npm:errno",
-        "type": "static"
-      },
-      {
-        "source": "npm:less@4.2.0",
-        "target": "npm:graceful-fs",
-        "type": "static"
-      },
-      {
-        "source": "npm:less@4.2.0",
-        "target": "npm:image-size",
-        "type": "static"
-      },
-      {
-        "source": "npm:less@4.2.0",
-        "target": "npm:make-dir@2.1.0",
-        "type": "static"
-      },
-      {
-        "source": "npm:less@4.2.0",
-        "target": "npm:mime",
-        "type": "static"
-      },
-      {
-        "source": "npm:less@4.2.0",
-        "target": "npm:needle",
-        "type": "static"
-      },
-      {
-        "source": "npm:less@4.2.0",
-        "target": "npm:source-map@0.6.1",
-        "type": "static"
-      }
-    ],
     "npm:less-loader@12.2.0": [
       {
         "source": "npm:less-loader@12.2.0",
-        "target": "npm:less@4.2.0",
+        "target": "npm:less",
         "type": "static"
       },
       {
@@ -14523,18 +15211,6 @@
       {
         "source": "npm:magic-string@0.30.11",
         "target": "npm:@jridgewell/sourcemap-codec",
-        "type": "static"
-      }
-    ],
-    "npm:make-dir@2.1.0": [
-      {
-        "source": "npm:make-dir@2.1.0",
-        "target": "npm:pify@4.0.1",
-        "type": "static"
-      },
-      {
-        "source": "npm:make-dir@2.1.0",
-        "target": "npm:semver@5.7.2",
         "type": "static"
       }
     ],
@@ -15392,6 +16068,11 @@
       {
         "source": "npm:@angular/build",
         "target": "npm:@angular/compiler-cli",
+        "type": "static"
+      },
+      {
+        "source": "npm:@angular/build",
+        "target": "npm:less",
         "type": "static"
       },
       {
@@ -19312,6 +19993,16 @@
     "npm:@module-federation/data-prefetch": [
       {
         "source": "npm:@module-federation/data-prefetch",
+        "target": "npm:react",
+        "type": "static"
+      },
+      {
+        "source": "npm:@module-federation/data-prefetch",
+        "target": "npm:react-dom",
+        "type": "static"
+      },
+      {
+        "source": "npm:@module-federation/data-prefetch",
         "target": "npm:@module-federation/runtime",
         "type": "static"
       },
@@ -20337,7 +21028,7 @@
       },
       {
         "source": "npm:@nx/js",
-        "target": "npm:babel-plugin-macros",
+        "target": "npm:babel-plugin-macros@2.8.0",
         "type": "static"
       },
       {
@@ -20428,6 +21119,50 @@
       {
         "source": "npm:@nx/js",
         "target": "npm:tslib",
+        "type": "static"
+      }
+    ],
+    "npm:babel-plugin-macros@2.8.0": [
+      {
+        "source": "npm:babel-plugin-macros@2.8.0",
+        "target": "npm:@babel/runtime",
+        "type": "static"
+      },
+      {
+        "source": "npm:babel-plugin-macros@2.8.0",
+        "target": "npm:cosmiconfig@6.0.0",
+        "type": "static"
+      },
+      {
+        "source": "npm:babel-plugin-macros@2.8.0",
+        "target": "npm:resolve",
+        "type": "static"
+      }
+    ],
+    "npm:cosmiconfig@6.0.0": [
+      {
+        "source": "npm:cosmiconfig@6.0.0",
+        "target": "npm:@types/parse-json",
+        "type": "static"
+      },
+      {
+        "source": "npm:cosmiconfig@6.0.0",
+        "target": "npm:import-fresh",
+        "type": "static"
+      },
+      {
+        "source": "npm:cosmiconfig@6.0.0",
+        "target": "npm:parse-json",
+        "type": "static"
+      },
+      {
+        "source": "npm:cosmiconfig@6.0.0",
+        "target": "npm:path-type",
+        "type": "static"
+      },
+      {
+        "source": "npm:cosmiconfig@6.0.0",
+        "target": "npm:yaml",
         "type": "static"
       }
     ],
@@ -20546,7 +21281,7 @@
       },
       {
         "source": "npm:@nx/webpack",
-        "target": "npm:less",
+        "target": "npm:less@4.1.3",
         "type": "static"
       },
       {
@@ -20667,6 +21402,70 @@
       {
         "source": "npm:@nx/webpack",
         "target": "npm:webpack-subresource-integrity",
+        "type": "static"
+      }
+    ],
+    "npm:less@4.1.3": [
+      {
+        "source": "npm:less@4.1.3",
+        "target": "npm:copy-anything",
+        "type": "static"
+      },
+      {
+        "source": "npm:less@4.1.3",
+        "target": "npm:parse-node-version",
+        "type": "static"
+      },
+      {
+        "source": "npm:less@4.1.3",
+        "target": "npm:tslib",
+        "type": "static"
+      },
+      {
+        "source": "npm:less@4.1.3",
+        "target": "npm:errno",
+        "type": "static"
+      },
+      {
+        "source": "npm:less@4.1.3",
+        "target": "npm:graceful-fs",
+        "type": "static"
+      },
+      {
+        "source": "npm:less@4.1.3",
+        "target": "npm:image-size",
+        "type": "static"
+      },
+      {
+        "source": "npm:less@4.1.3",
+        "target": "npm:make-dir@2.1.0",
+        "type": "static"
+      },
+      {
+        "source": "npm:less@4.1.3",
+        "target": "npm:mime",
+        "type": "static"
+      },
+      {
+        "source": "npm:less@4.1.3",
+        "target": "npm:needle",
+        "type": "static"
+      },
+      {
+        "source": "npm:less@4.1.3",
+        "target": "npm:source-map@0.6.1",
+        "type": "static"
+      }
+    ],
+    "npm:make-dir@2.1.0": [
+      {
+        "source": "npm:make-dir@2.1.0",
+        "target": "npm:pify@4.0.1",
+        "type": "static"
+      },
+      {
+        "source": "npm:make-dir@2.1.0",
+        "target": "npm:semver@5.7.2",
         "type": "static"
       }
     ],
@@ -23460,6 +24259,13 @@
         "type": "static"
       }
     ],
+    "npm:dedent": [
+      {
+        "source": "npm:dedent",
+        "target": "npm:babel-plugin-macros",
+        "type": "static"
+      }
+    ],
     "npm:default-browser": [
       {
         "source": "npm:default-browser",
@@ -24533,7 +25339,7 @@
       },
       {
         "source": "npm:fork-ts-checker-webpack-plugin",
-        "target": "npm:cosmiconfig@7.1.0",
+        "target": "npm:cosmiconfig",
         "type": "static"
       },
       {
@@ -24574,33 +25380,6 @@
       {
         "source": "npm:fork-ts-checker-webpack-plugin",
         "target": "npm:tapable",
-        "type": "static"
-      }
-    ],
-    "npm:cosmiconfig@7.1.0": [
-      {
-        "source": "npm:cosmiconfig@7.1.0",
-        "target": "npm:@types/parse-json",
-        "type": "static"
-      },
-      {
-        "source": "npm:cosmiconfig@7.1.0",
-        "target": "npm:import-fresh",
-        "type": "static"
-      },
-      {
-        "source": "npm:cosmiconfig@7.1.0",
-        "target": "npm:parse-json",
-        "type": "static"
-      },
-      {
-        "source": "npm:cosmiconfig@7.1.0",
-        "target": "npm:path-type",
-        "type": "static"
-      },
-      {
-        "source": "npm:cosmiconfig@7.1.0",
-        "target": "npm:yaml",
         "type": "static"
       }
     ],
@@ -27333,6 +28112,13 @@
         "type": "static"
       }
     ],
+    "npm:loose-envify": [
+      {
+        "source": "npm:loose-envify",
+        "target": "npm:js-tokens",
+        "type": "static"
+      }
+    ],
     "npm:lru-cache": [
       {
         "source": "npm:lru-cache",
@@ -28555,7 +29341,7 @@
       },
       {
         "source": "npm:postcss-loader",
-        "target": "npm:cosmiconfig@7.1.0",
+        "target": "npm:cosmiconfig",
         "type": "static"
       },
       {
@@ -29037,6 +29823,30 @@
         "type": "static"
       }
     ],
+    "npm:react": [
+      {
+        "source": "npm:react",
+        "target": "npm:loose-envify",
+        "type": "static"
+      }
+    ],
+    "npm:react-dom": [
+      {
+        "source": "npm:react-dom",
+        "target": "npm:react",
+        "type": "static"
+      },
+      {
+        "source": "npm:react-dom",
+        "target": "npm:loose-envify",
+        "type": "static"
+      },
+      {
+        "source": "npm:react-dom",
+        "target": "npm:scheduler",
+        "type": "static"
+      }
+    ],
     "npm:read-cache": [
       {
         "source": "npm:read-cache",
@@ -29357,6 +30167,13 @@
       {
         "source": "npm:saxes",
         "target": "npm:xmlchars",
+        "type": "static"
+      }
+    ],
+    "npm:scheduler": [
+      {
+        "source": "npm:scheduler",
+        "target": "npm:loose-envify",
         "type": "static"
       }
     ],
