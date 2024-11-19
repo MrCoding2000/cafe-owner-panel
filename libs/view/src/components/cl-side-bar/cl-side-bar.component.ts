@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'lib-cl-side-bar',
+  selector: 'cl-side-bar',
   standalone: true,
   imports: [],
   templateUrl: './cl-side-bar.component.html',
