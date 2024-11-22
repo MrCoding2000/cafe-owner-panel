@@ -1,8 +1,8 @@
 {
   "run": {
-    "command": "nx run-many --target=build --projects=user_management --configuration=development",
-    "startTime": "2024-11-19T19:28:02.550Z",
-    "endTime": "2024-11-19T19:28:16.335Z",
+    "command": "nx run-many --target=build --projects=user_management,reports,payments,security,dashboard --configuration=development",
+    "startTime": "2024-11-22T16:10:01.186Z",
+    "endTime": "2024-11-22T16:10:21.048Z",
     "inner": false
   },
   "tasks": [
@@ -10,9 +10,53 @@
       "taskId": "user_management:build:development",
       "target": "build",
       "projectName": "user_management",
-      "hash": "9676419314953864797",
-      "startTime": "2024-11-19T19:28:02.562Z",
-      "endTime": "2024-11-19T19:28:16.335Z",
+      "hash": "4499922241355194162",
+      "startTime": "2024-11-22T16:10:01.205Z",
+      "endTime": "2024-11-22T16:10:01.229Z",
+      "params": "",
+      "cacheStatus": "local-cache-hit",
+      "status": 0
+    },
+    {
+      "taskId": "payments:build:development",
+      "target": "build",
+      "projectName": "payments",
+      "hash": "3273633684638512718",
+      "startTime": "2024-11-22T16:10:01.206Z",
+      "endTime": "2024-11-22T16:10:12.110Z",
+      "params": "",
+      "cacheStatus": "cache-miss",
+      "status": 0
+    },
+    {
+      "taskId": "security:build:development",
+      "target": "build",
+      "projectName": "security",
+      "hash": "8334830094229127676",
+      "startTime": "2024-11-22T16:10:01.237Z",
+      "endTime": "2024-11-22T16:10:12.171Z",
+      "params": "",
+      "cacheStatus": "cache-miss",
+      "status": 0
+    },
+    {
+      "taskId": "reports:build:development",
+      "target": "build",
+      "projectName": "reports",
+      "hash": "9984060466162683711",
+      "startTime": "2024-11-22T16:10:01.207Z",
+      "endTime": "2024-11-22T16:10:12.235Z",
+      "params": "",
+      "cacheStatus": "cache-miss",
+      "status": 0
+    },
+    {
+      "taskId": "dashboard:build:development",
+      "target": "build",
+      "projectName": "dashboard",
+      "hash": "5387597949733851135",
+      "startTime": "2024-11-22T16:10:12.110Z",
+      "endTime": "2024-11-22T16:10:21.047Z",
       "params": "",
       "cacheStatus": "cache-miss",
       "status": 0
