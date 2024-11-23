@@ -1,8 +1,8 @@
 {
   "run": {
     "command": "nx run-many --target=build --projects=user_management,reports,payments,security,dashboard --configuration=development",
-    "startTime": "2024-11-22T16:10:01.186Z",
-    "endTime": "2024-11-22T16:10:21.048Z",
+    "startTime": "2024-11-23T20:07:17.588Z",
+    "endTime": "2024-11-23T20:07:18.558Z",
     "inner": false
   },
   "tasks": [
@@ -10,9 +10,9 @@
       "taskId": "user_management:build:development",
       "target": "build",
       "projectName": "user_management",
-      "hash": "4499922241355194162",
-      "startTime": "2024-11-22T16:10:01.205Z",
-      "endTime": "2024-11-22T16:10:01.229Z",
+      "hash": "16722714561609788605",
+      "startTime": "2024-11-23T20:07:17.618Z",
+      "endTime": "2024-11-23T20:07:17.627Z",
       "params": "",
       "cacheStatus": "local-cache-hit",
       "status": 0
@@ -22,21 +22,10 @@
       "target": "build",
       "projectName": "payments",
       "hash": "3273633684638512718",
-      "startTime": "2024-11-22T16:10:01.206Z",
-      "endTime": "2024-11-22T16:10:12.110Z",
+      "startTime": "2024-11-23T20:07:17.619Z",
+      "endTime": "2024-11-23T20:07:17.634Z",
       "params": "",
-      "cacheStatus": "cache-miss",
-      "status": 0
-    },
-    {
-      "taskId": "security:build:development",
-      "target": "build",
-      "projectName": "security",
-      "hash": "8334830094229127676",
-      "startTime": "2024-11-22T16:10:01.237Z",
-      "endTime": "2024-11-22T16:10:12.171Z",
-      "params": "",
-      "cacheStatus": "cache-miss",
+      "cacheStatus": "local-cache-hit",
       "status": 0
     },
     {
@@ -44,10 +33,21 @@
       "target": "build",
       "projectName": "reports",
       "hash": "9984060466162683711",
-      "startTime": "2024-11-22T16:10:01.207Z",
-      "endTime": "2024-11-22T16:10:12.235Z",
+      "startTime": "2024-11-23T20:07:17.620Z",
+      "endTime": "2024-11-23T20:07:17.641Z",
       "params": "",
-      "cacheStatus": "cache-miss",
+      "cacheStatus": "local-cache-hit",
+      "status": 0
+    },
+    {
+      "taskId": "security:build:development",
+      "target": "build",
+      "projectName": "security",
+      "hash": "8334830094229127676",
+      "startTime": "2024-11-23T20:07:17.649Z",
+      "endTime": "2024-11-23T20:07:18.231Z",
+      "params": "",
+      "cacheStatus": "local-cache-hit",
       "status": 0
     },
     {
@@ -55,10 +55,10 @@
       "target": "build",
       "projectName": "dashboard",
       "hash": "5387597949733851135",
-      "startTime": "2024-11-22T16:10:12.110Z",
-      "endTime": "2024-11-22T16:10:21.047Z",
+      "startTime": "2024-11-23T20:07:17.655Z",
+      "endTime": "2024-11-23T20:07:18.484Z",
       "params": "",
-      "cacheStatus": "cache-miss",
+      "cacheStatus": "local-cache-hit",
       "status": 0
     }
   ]

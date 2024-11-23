@@ -1,5 +1,109 @@
 {
   "nodes": {
+    "state": {
+      "name": "state",
+      "type": "lib",
+      "data": {
+        "root": "libs/state-management/src/state",
+        "name": "state",
+        "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+        "sourceRoot": "libs/state-management/src/state/src",
+        "prefix": "lib",
+        "projectType": "library",
+        "tags": [],
+        "targets": {
+          "test": {
+            "executor": "@nx/jest:jest",
+            "outputs": [
+              "{workspaceRoot}/coverage/{projectRoot}"
+            ],
+            "options": {
+              "jestConfig": "libs/state-management/src/state/jest.config.ts",
+              "passWithNoTests": true
+            },
+            "configurations": {
+              "ci": {
+                "ci": true,
+                "codeCoverage": true
+              }
+            },
+            "parallelism": true,
+            "cache": true,
+            "inputs": [
+              "default",
+              "^production",
+              "{workspaceRoot}/jest.preset.js"
+            ]
+          },
+          "lint": {
+            "executor": "@nx/eslint:lint",
+            "configurations": {},
+            "options": {},
+            "parallelism": true,
+            "cache": true,
+            "inputs": [
+              "default",
+              "{workspaceRoot}/.eslintrc.json",
+              "{workspaceRoot}/.eslintignore",
+              "{workspaceRoot}/eslint.config.js"
+            ]
+          }
+        },
+        "implicitDependencies": []
+      }
+    },
+    "store": {
+      "name": "store",
+      "type": "lib",
+      "data": {
+        "root": "libs/state-management/src/store",
+        "name": "store",
+        "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+        "sourceRoot": "libs/state-management/src/store/src",
+        "prefix": "lib",
+        "projectType": "library",
+        "tags": [],
+        "targets": {
+          "test": {
+            "executor": "@nx/jest:jest",
+            "outputs": [
+              "{workspaceRoot}/coverage/{projectRoot}"
+            ],
+            "options": {
+              "jestConfig": "libs/state-management/src/store/jest.config.ts",
+              "passWithNoTests": true
+            },
+            "configurations": {
+              "ci": {
+                "ci": true,
+                "codeCoverage": true
+              }
+            },
+            "parallelism": true,
+            "cache": true,
+            "inputs": [
+              "default",
+              "^production",
+              "{workspaceRoot}/jest.preset.js"
+            ]
+          },
+          "lint": {
+            "executor": "@nx/eslint:lint",
+            "configurations": {},
+            "options": {},
+            "parallelism": true,
+            "cache": true,
+            "inputs": [
+              "default",
+              "{workspaceRoot}/.eslintrc.json",
+              "{workspaceRoot}/.eslintignore",
+              "{workspaceRoot}/eslint.config.js"
+            ]
+          }
+        },
+        "implicitDependencies": []
+      }
+    },
     "implementation": {
       "name": "implementation",
       "type": "lib",
@@ -21,6 +125,58 @@
             ],
             "options": {
               "jestConfig": "libs/api/src/implementation/jest.config.ts",
+              "passWithNoTests": true
+            },
+            "configurations": {
+              "ci": {
+                "ci": true,
+                "codeCoverage": true
+              }
+            },
+            "parallelism": true,
+            "cache": true,
+            "inputs": [
+              "default",
+              "^production",
+              "{workspaceRoot}/jest.preset.js"
+            ]
+          },
+          "lint": {
+            "executor": "@nx/eslint:lint",
+            "configurations": {},
+            "options": {},
+            "parallelism": true,
+            "cache": true,
+            "inputs": [
+              "default",
+              "{workspaceRoot}/.eslintrc.json",
+              "{workspaceRoot}/.eslintignore",
+              "{workspaceRoot}/eslint.config.js"
+            ]
+          }
+        },
+        "implicitDependencies": []
+      }
+    },
+    "state-management": {
+      "name": "state-management",
+      "type": "lib",
+      "data": {
+        "root": "libs/state-management",
+        "name": "state-management",
+        "$schema": "../../node_modules/nx/schemas/project-schema.json",
+        "sourceRoot": "libs/state-management/src",
+        "prefix": "lib",
+        "projectType": "library",
+        "tags": [],
+        "targets": {
+          "test": {
+            "executor": "@nx/jest:jest",
+            "outputs": [
+              "{workspaceRoot}/coverage/{projectRoot}"
+            ],
+            "options": {
+              "jestConfig": "libs/state-management/jest.config.ts",
               "passWithNoTests": true
             },
             "configurations": {
@@ -14341,6 +14497,30 @@
     }
   },
   "dependencies": {
+    "state": [
+      {
+        "source": "state",
+        "target": "npm:@nx/eslint-plugin",
+        "type": "static"
+      },
+      {
+        "source": "state",
+        "target": "npm:jest-preset-angular",
+        "type": "static"
+      }
+    ],
+    "store": [
+      {
+        "source": "store",
+        "target": "npm:@nx/eslint-plugin",
+        "type": "static"
+      },
+      {
+        "source": "store",
+        "target": "npm:jest-preset-angular",
+        "type": "static"
+      }
+    ],
     "implementation": [
       {
         "source": "implementation",
@@ -14359,6 +14539,18 @@
       },
       {
         "source": "implementation",
+        "target": "npm:jest-preset-angular",
+        "type": "static"
+      }
+    ],
+    "state-management": [
+      {
+        "source": "state-management",
+        "target": "npm:@nx/eslint-plugin",
+        "type": "static"
+      },
+      {
+        "source": "state-management",
         "target": "npm:jest-preset-angular",
         "type": "static"
       }

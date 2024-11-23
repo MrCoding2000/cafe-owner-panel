@@ -15,20 +15,29 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@cafe-chi-admin-panel-front/api": ["libs/api/src/index.ts"],
-      "@cafe-chi-admin-panel-front/dto": ["libs/api/src/dto/src/index.ts"],
+      "@cafe-chi-admin-panel-front/api": ["libs/api/index.ts"],
+      "@cafe-chi-admin-panel-front/dto": ["libs/api/dto/src/index.ts"],
       "@cafe-chi-admin-panel-front/implementation": [
-        "libs/api/src/implementation/src/index.ts"
+        "libs/api/src/implementation/index.ts"
       ],
       "@cafe-chi-admin-panel-front/mapper": [
-        "libs/api/src/mapper/src/index.ts"
+        "libs/api/src/mapper/index.ts"
       ],
       "@cafe-chi-admin-panel-front/misc": ["libs/api/src/misc/src/index.ts"],
+      "@cafe-chi-admin-panel-front/state": [
+        "libs/state-management/state/src/index.ts"
+      ],
+      "@cafe-chi-admin-panel-front/state-management": [
+        "libs/state-management/index.ts"
+      ],
+      "@cafe-chi-admin-panel-front/store": [
+        "libs/state-management/store/src/index.ts"
+      ],
       "@cafe-chi-owner-panel-front/cl-table": [
         "libs/view/cl-table/src/index.ts"
       ],
-      "@cafe-chi-owner-panel-front/libs": ["libs/src/index.ts"],
-      "@cafe-chi-owner-panel-front/view": ["libs/view/src/index.ts"],
+      "@cafe-chi-owner-panel-front/libs": ["libs/index.ts"],
+      "@cafe-chi-owner-panel-front/view": ["libs/view/index.ts"],
       "@view/lib": ["libs/view/src/index.ts"],
       "@view/lib/*": ["libs/view/src/*/index.ts"],
       "dashboard/Routes": [
