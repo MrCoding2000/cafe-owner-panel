@@ -1,1 +1,1 @@
-export * from './cl-side-bar/cl-side-bar.component';
+export * from './cl-sidebar/cl-sidebar.component';

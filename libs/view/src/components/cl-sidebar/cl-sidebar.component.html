@@ -1,0 +1,10 @@
+<nav>
+  <ul [ngStyle]="sideBarConfig.listStyle" class="cl-sidebar-container">
+    @for (sideBarItem of sideBarConfig.list; track sideBarItem.id) {
+      <li [ngStyle]="{'font-size': sideBarConfig.itemStyle.fontSize}" class="cl-sidebar-item">
+        <i class="pi pi-{{sideBarItem.icon}}"></i>
+        <span>{{sideBarItem.label}}</span>
+      </li>
+    }
+  </ul>
+</nav>

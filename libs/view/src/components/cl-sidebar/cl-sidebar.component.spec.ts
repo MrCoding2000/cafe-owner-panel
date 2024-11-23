@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ClSideBarComponent } from './cl-side-bar.component';
+import { ClSidebarComponent } from './cl-sidebar.component';
 
-describe('ClSideBarComponent', () => {
-  let component: ClSideBarComponent;
-  let fixture: ComponentFixture<ClSideBarComponent>;
+describe('ClSidebarComponent', () => {
+  let component: ClSidebarComponent;
+  let fixture: ComponentFixture<ClSidebarComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ClSideBarComponent]
+      imports: [ClSidebarComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(ClSideBarComponent);
+    fixture = TestBed.createComponent(ClSidebarComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
