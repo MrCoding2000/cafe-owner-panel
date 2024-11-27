@@ -1,10 +1,34 @@
 @import "primeicons/primeicons.css";
+@import "../../shared/mixins";
 .cl-sidebar-container {
   padding: 0;
   margin: 0;
   list-style: none;
-}
-
-.cl-sidebar-item {
-  font-size: 1px;
+  @include displayFlex(center,center,column);
+  .cl-sidebar-item {
+    @include displayFlex(center,center,column);
+    width: 80px;
+    height: 80px;
+    padding: 0.65em 0;
+    margin-top: 1em;
+    border: 1px solid transparent;
+    color: #D6CDA4;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.5s;
+    &:hover {
+      border-color: #D6CDA4;
+    }
+    &.active {
+      background-color: #D6CDA4;
+      color: #1C6758;
+    }
+    i {
+      font-size: 20px;
+      margin-bottom: 0.75em;
+    }
+    span {
+      font-size: 14px;
+    }
+  }
 }

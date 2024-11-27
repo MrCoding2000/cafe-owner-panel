@@ -1,0 +1,28 @@
+@import "../../../../libs/view/src/shared/mixins";
+
+.shell-container {
+  @include displayFlex(space-between, flex-start);
+  background: #fbf5d6;
+  .side-bar-container {
+    width: 140px;
+    height: 100vh;
+    background: #1C6758;
+  }
+  .shell-body-container {
+    width: calc(96vw - 140px);
+    height: 90vh;
+    margin: auto;
+  }
+  .main-header-container {
+    height: 70px;
+    border-radius: 8px;
+    background: #1C6758;
+    margin-bottom: 3em;
+  }
+  .main-body-container {
+    width: 100%;
+    height: calc(100% - 70px - 3em);
+    background: white;
+    border-radius: 15px;
+  }
+}

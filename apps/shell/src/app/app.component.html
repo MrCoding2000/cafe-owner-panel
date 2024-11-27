@@ -1,10 +1,17 @@
-<ul class="remote-menu">
-  <li><a routerLink="/">Home</a></li>
-  <li><a routerLink="user_management">UserManagement</a></li>
-  <li><a routerLink="reports">Reports</a></li>
-  <li><a routerLink="payments">Payments</a></li>
-  <li><a routerLink="security">Security</a></li>
-  <li><a routerLink="dashboard">Dashboard</a></li>
-</ul>
-<cl-side-bar></cl-side-bar>
-<router-outlet></router-outlet>
+@defer (on immediate) {
+  <section class="shell-container">
+    <aside class="side-bar-container">
+      <cl-sidebar></cl-sidebar>
+    </aside>
+    <section class="shell-body-container">
+      <section class="main-header-container">
+        <lib-main-header [headerName]="'test'"></lib-main-header>
+      </section>
+      <main class="main-body-container">
+        <router-outlet></router-outlet>
+      </main>
+    </section>
+  </section>
+} @placeholder {
+
+}

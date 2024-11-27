@@ -12803,6 +12803,15 @@
         "hash": "sha512-Pdlw/oPxN+aXdmM9R00JVC9WVFoCLTKJvDVLgmJ+qAffBMxsV85l/Lu7sNx4zSzPyoL2euImuEwHhOXdEgNFZQ=="
       }
     },
+    "npm:primeicons": {
+      "type": "npm",
+      "name": "npm:primeicons",
+      "data": {
+        "version": "7.0.0",
+        "packageName": "primeicons",
+        "hash": "sha512-jK3Et9UzwzTsd6tzl2RmwrVY/b8raJ3QZLzoDACj+oTJ0oX7L9Hy+XnVwgo4QVKlKpnP/Ur13SXV/pVh4LzaDw=="
+      }
+    },
     "npm:primeng": {
       "type": "npm",
       "name": "npm:primeng",
@@ -14869,6 +14878,11 @@
       },
       {
         "source": "shell",
+        "target": "npm:@angular/platform-browser",
+        "type": "static"
+      },
+      {
+        "source": "shell",
         "target": "dashboard",
         "type": "dynamic"
       },
@@ -14894,11 +14908,6 @@
       },
       {
         "source": "shell",
-        "target": "npm:@angular/platform-browser",
-        "type": "static"
-      },
-      {
-        "source": "shell",
         "target": "npm:jest-preset-angular",
         "type": "static"
       },
@@ -14917,6 +14926,16 @@
       {
         "source": "view",
         "target": "npm:@angular/core",
+        "type": "static"
+      },
+      {
+        "source": "view",
+        "target": "npm:@angular/common",
+        "type": "static"
+      },
+      {
+        "source": "view",
+        "target": "npm:@angular/router",
         "type": "static"
       }
     ],

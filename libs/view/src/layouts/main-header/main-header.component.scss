@@ -1,0 +1,21 @@
+@import "../../shared/mixins";
+
+.main-header-container {
+  @include displayFlex(space-around, center);
+  height: 100%;
+  color: white;
+  .title {
+    width: 20%;
+    color: #D6CDA4;
+  }
+  .user-welcome-container {
+    @include displayFlex(flex-end, center);
+    width: 75%;
+    font-size: 16px;
+    img {
+      width: 40px;
+      height: 40px;
+      margin-right: 1em;
+    }
+  }
+}
